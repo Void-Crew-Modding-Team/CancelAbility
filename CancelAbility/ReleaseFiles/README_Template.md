@@ -14,8 +14,8 @@ Requires: [Dependencies]
 
 ### 💡 Functions
 
-- Enables cancel input while abilities are active
 - Canceled abilities maintain charge (Except Grapple Hook)
+- Abilities can be started while on cooldown.
 
 ### 🎮 Client Usage
 
