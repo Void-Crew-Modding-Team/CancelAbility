@@ -21,8 +21,14 @@ namespace CancelAbility
                 {
                     float cooldown = ability.CurrentCooldown;
                     ability.CurrentCooldown = 0;
-                    ability.StartAbility();
-                    ability.CurrentActiveDuration = (1 - cooldown / ability.CooldownSeconds.Value) * ability.FiniteTimeDuration.Value;
+                    if (ability.StartAbility())
+                    {
+                        ability.CurrentActiveDuration = (1 - cooldown / ability.CooldownSeconds.Value) * ability.FiniteTimeDuration.Value;
+                    }
+                    else
+                    {
+                        ability.CurrentCooldown = cooldown;
+                    }
                 }
             }
         }
