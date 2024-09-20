@@ -9,7 +9,7 @@ namespace CancelAbility
         [HarmonyPatch("ActivationKeyPressed")]
         static void ActivationKeyPressed(ClassAbility __instance)
         {
-            if (__instance is FiniteDurationClassAbility ability && ability is not ChannelGrapplingHook)
+            if (VoidManagerPlugin.SessionFeaturesEnabled && __instance is FiniteDurationClassAbility ability && ability is not ChannelGrapplingHook)
             {
                 if (ability.IsOngoing())
                 {
